@@ -28,7 +28,7 @@ def readme():
         return f.read()
 
 setup(name='damealgorithms',
-      version='0.0.1',
+      version='0.0.8',
       description='A library to store simple algorithms',
       long_description=readme(),
       classifiers=[
@@ -38,12 +38,13 @@ setup(name='damealgorithms',
         'Topic :: Scientific/Engineering :: Mathematics',
       ],
       keywords='maths, algorithms',
-#      scripts=['damefunniest/bin/funniest-joke'],
+      scripts=['bin/hamiltonian.py'],
       url='http://github.com/davidam/damealgorithms',
       author='David Arroyo Menéndez',
       author_email='davidam@gnu.org',
       license='GPLv3',
-      packages=['damealgorithms'],
+      packages=['damealgorithms', 'damealgorithms.tests', 'damealgorithms.src'],
+      package_dir={'damealgorithms': 'damealgorithms', 'damealgorithms.tests': 'damealgorithms/tests', 'damealgorithms.src': 'damealgorithms/src'},
       install_requires=[
           'markdown',
       ],
