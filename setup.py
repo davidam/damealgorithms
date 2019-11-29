@@ -22,15 +22,17 @@
 # Boston, MA 02110-1301 USA,
 
 from setuptools import setup
+from os import path
 
-def readme():
-    with open('README.org') as f:
-        return f.read()
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
 
 setup(name='damealgorithms',
-      version='0.0.8',
+      version='0.0.9',
       description='A library to store simple algorithms',
-      long_description=readme(),
+      long_description=long_description,
+      long_description_content_type='text/markdown',
       classifiers=[
         'Development Status :: 3 - Alpha',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
