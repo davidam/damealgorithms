@@ -3,8 +3,8 @@
 
 # Copyright (C) 2019  David Arroyo Menéndez
 
-# Author: David Arroyo Menéndez <davidam@gnu.org>
-# Maintainer: David Arroyo Menéndez <davidam@gnu.org>
+# Author: David Arroyo Menéndez <davidam@gmail.com>
+# Maintainer: David Arroyo Menéndez <davidam@gmail.com>
 
 # This file is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ setup(name='damealgorithms',
       scripts=['bin/hamiltonian.py'],
       url='http://github.com/davidam/damealgorithms',
       author='David Arroyo Menéndez',
-      author_email='davidam@gnu.org',
+      author_email='davidam@gmail.com',
       license='GPLv3',
       packages=['damealgorithms', 'damealgorithms.tests', 'damealgorithms.src'],
       package_dir={'damealgorithms': 'damealgorithms', 'damealgorithms.tests': 'damealgorithms/tests', 'damealgorithms.src': 'damealgorithms/src'},
