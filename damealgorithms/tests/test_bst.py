@@ -24,6 +24,7 @@
 from unittest import TestCase
 from src.bst import BinarySearchTree
 
+
 class TestBst(TestCase):
 
     def test_bst_create(self):

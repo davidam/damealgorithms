@@ -34,7 +34,7 @@ class Tree(object):
         return 1 + sum(self.subtreeSize(c) for c in node.getChildren())
 
     def size(self):
-        if (self.root == None):
+        if (self.root is None):
             return 0
         else:
             return self.subtreeSize(self.root)
@@ -45,47 +45,51 @@ class BinaryNode:
         self.val = v
         self.leftChild = None
         self.rightChild = None
+
     def get(self):
         return self.val
+
     def set(self, v):
         self.val = v
+
     def getChildren(self):
         children = []
-        if self.leftChild != None:
+        if self.leftChild is not None:
             children.append(self.leftChild)
-        if self.rightChild != None:
+        if self.rightChild is not None:
             children.append(self.rightChild)
         return children
 
+
 class BinarySearchTree(Tree):
     def insert(self, val):
-        if self.root == None:
-                self.setRoot(BinaryNode(val))
+        if self.root is None:
+            self.setRoot(BinaryNode(val))
         else:
             currentRoot = self.root
             while(True):
                 if val <= currentRoot.get():
-                    if currentRoot.leftChild != None:
+                    if currentRoot.leftChild is not None:
                         currentRoot = currentRoot.leftChild
                     else:
                         currentRoot.leftChild = BinaryNode(val)
                         break
                 else:
-                    if currentRoot.rightChild != None:
-                       currentRoot = currentRoot.rightChild
+                    if currentRoot.rightChild is not None:
+                        currentRoot = currentRoot.rightChild
                     else:
                         currentRoot.rightChild = BinaryNode(val)
                         break
 
     def find(self, val):
         currentRoot = self.root
-        while (currentRoot != None and currentRoot.get() != val):
+        while (currentRoot is not None and currentRoot.get() != val):
             if val < currentRoot.get():
                 currentRoot = currentRoot.leftChild
             else:
                 currentRoot = currentRoot.rightChild
 
-        if currentRoot == None:
+        if currentRoot is None:
             return False
         else:
             return True
