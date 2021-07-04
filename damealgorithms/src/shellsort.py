@@ -39,18 +39,17 @@ class Graph(object):
             sublistcount = sublistcount // 2
 
     def gapInsertionSort(self, start, gap):
-        for i in range(start + gap, len(self.alist), gap):
+        for i in range(start+gap, len(self.alist), gap):
 
             currentvalue = self.alist[i]
             position = i
 
-            bool1 = (position >= gap)
-            bool1 = bool1 and (self.alist[position-gap] > currentvalue)
-            while bool1:
-                self.alist[position] = self.alist[position - gap]
-                position = position - gap
+            while position >= gap and self.alist[position-gap] > currentvalue:
+                self.alist[position] = self.alist[position-gap]
+                position = position-gap
 
             self.alist[position] = currentvalue
+
 
 # g = Graph([54,26,93,17,77,31,44,55,20])
 # g.shellSort()
