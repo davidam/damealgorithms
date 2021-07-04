@@ -24,27 +24,11 @@
 from unittest import TestCase
 from src.mcolors import Graph
 
+
 class TestBfs(TestCase):
 
     def test_mcolors_create(self):
-        g  = Graph(4)
-        g.graph = [[0,1,1,1], [1,0,1,0], [1,1,0,1], [1,0,1,0]]
-        m=3
+        g = Graph(4)
+        g.graph = [[0, 1, 1, 1], [1, 0, 1, 0], [1, 1, 0, 1], [1, 0, 1, 0]]
+        m = 3
         self.assertEqual(g.graphColouring(m), [1, 2, 3, 2])
-
-
-    # def test_bfs_helper(self):
-    #     alist = [54,26,93,17,77,31,44,55,20]
-    #     q = Quicksort(alist)
-    #     self.assertEqual(None, q.quickSortHelper(alist, 54, 20))
-        
-    # def test_quicksort_partition(self):
-    #     l = [54,26,93,17,77,31,44,55,20]
-    #     q = Quicksort(l)
-    #     self.assertEqual([54, 26], q.partition(l, 0, 1))
-
-
-    # def test_quicksort_quicksort(self):
-    #     alist = [54,26,93,17,77,31,44,55,20]
-    #     q = Quicksort(alist)
-    #     self.assertEqual([54,26,93,17,77,31,44,55,20], q.quickSort(alist))

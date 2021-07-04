@@ -27,8 +27,8 @@ class Graph():
 
     def __init__(self, vertices):
         self.V = vertices
-        self.graph = [[0 for column in range(vertices)]\
-                              for row in range(vertices)]
+        self.graph = [[0 for column in range(vertices)]
+                      for row in range(vertices)]
 
     # A utility function to check if the current color assignment
     # is safe for vertex v
@@ -45,26 +45,17 @@ class Graph():
             return True
 
         for c in range(1, m+1):
-            if self.isSafe(v, colour, c) == True:
+            if self.isSafe(v, colour, c) is True:
                 colour[v] = c
-                if self.graphColourUtil(m, colour, v+1) == True:
+                if self.graphColourUtil(m, colour, v+1) is True:
                     return True
                 colour[v] = 0
 
     def graphColouring(self, m):
         colour = [0] * self.V
-        if self.graphColourUtil(m, colour, 0) == False:
+        if self.graphColourUtil(m, colour, 0) is False:
             return False
-
-        # Print the solution
-#        print("Solution exist and Following are the assigned colours:")
-        l = [ ]
+        l1 = []
         for c in colour:
-            l.append(c)
-        return l
-
-# Driver Code
-g  = Graph(4)
-g.graph = [[0,1,1,1], [1,0,1,0], [1,1,0,1], [1,0,1,0]]
-m=3
-print(g.graphColouring(m))
+            l1.append(c)
+        return l1
