@@ -24,10 +24,11 @@
 from unittest import TestCase
 from src.minmax import DameMinMax
 
+
 class TestMinMax(TestCase):
 
     def test_minmax(self):
         mm = DameMinMax([9, 3, 5, 10, 1, 7, 12])
-        l1= mm.minmax()
+        l1 = mm.minmax()
         l2 = [1, 12, 7, 10]
         self.assertEqual(l1, l2)
