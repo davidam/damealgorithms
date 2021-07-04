@@ -28,18 +28,18 @@ class Quicksort(object):
     def __init__(self, v):
         self.vector = v
 
-    def quickSortHelper(self, alist,first,last):
-        if first<last:
-            splitpoint = partition(alist,first,last)
-            quickSortHelper(alist,first,splitpoint-1)
-            quickSortHelper(alist,splitpoint+1,last)
+    def quickSortHelper(self, alist, first, last):
+        if (first < last):
+            splitpoint = partition(alist, first, last)
+            quickSortHelper(alist, first, splitpoint-1)
+            quickSortHelper(alist, splitpoint+1, last)
 
     def quickSort(self, alist):
-        quickSortHelper(alist,0,len(alist)-1)
+        quickSortHelper(alist, 0, len(alist) - 1)
 
-    def partition(self, alist,first,last):
+    def partition(self, alist, first, last):
         pivotvalue = alist[first]
-        leftmark = first+1
+        leftmark = first + 1
         rightmark = last
         done = False
         while not done:
@@ -47,14 +47,14 @@ class Quicksort(object):
                 leftmark = leftmark + 1
 
         while alist[rightmark] >= pivotvalue and rightmark >= leftmark:
-           rightmark = rightmark -1
+            rightmark = rightmark - 1
 
         if rightmark < leftmark:
-           done = True
+            done = True
         else:
-           temp = alist[leftmark]
-           alist[leftmark] = alist[rightmark]
-           alist[rightmark] = temp
+            temp = alist[leftmark]
+            alist[leftmark] = alist[rightmark]
+            alist[rightmark] = temp
 
         temp = alist[first]
         alist[first] = alist[rightmark]

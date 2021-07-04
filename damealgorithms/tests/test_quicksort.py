@@ -24,23 +24,23 @@
 from unittest import TestCase
 from src.quicksort import Quicksort
 
+
 class TestBasics(TestCase):
 
     def test_quicksort_create(self):
-        alist = [54,26,93,17,77,31,44,55,20]
+        alist = [54, 26, 93, 17, 77, 31, 44, 55, 20]
         q = Quicksort(alist)
-        self.assertEqual([54,26,93,17,77,31,44,55,20], q.vector)
+        self.assertEqual([54, 26, 93, 17, 77, 31, 44, 55, 20], q.vector)
 
     def test_quicksort_helper(self):
-        alist = [54,26,93,17,77,31,44,55,20]
+        alist = [54, 26, 93, 17, 77, 31, 44, 55, 20]
         q = Quicksort(alist)
         self.assertEqual(None, q.quickSortHelper(alist, 54, 20))
-        
+
     # def test_quicksort_partition(self):
     #     l = [54,26,93,17,77,31,44,55,20]
     #     q = Quicksort(l)
     #     self.assertEqual([54, 26], q.partition(l, 0, 1))
-
 
     # def test_quicksort_quicksort(self):
     #     alist = [54,26,93,17,77,31,44,55,20]
