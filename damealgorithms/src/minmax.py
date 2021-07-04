@@ -22,80 +22,70 @@
 # Boston, MA 02110-1301 USA,
 
 class DameMinMax(object):
-    def __init__(self, l):
-        self.l = l
+    def __init__(self, l1):
+        self.l1 = l1
 
     def minmax(self):
-        n = len(self.l)
+        n = len(self.l1)
         counter = 0
         if n == 0:
             return
 
         elif n == 1:
-            min = max = self.l[0]
+            min = max = self.l1[0]
 
         elif n == 2:
             # 1 compare for 2 elements
-            counter +=1
-            if self.l[0] < self.l[n-1]:
-                min = self.l[0]
-                max = self.l[n-1]
+            counter += 1
+            if self.l1[0] < self.l1[n-1]:
+                min = self.l1[0]
+                max = self.l1[n-1]
             else:
-                min = self.l[n-1]
-                max = self.l[0]
+                min = self.l1[n-1]
+                max = self.l1[0]
 
         else:
-                # 1 compare between 1st and last element
-                counter +=1
-                if self.l[0] < self.l[n-1]:
-                    min = self.l[0]
-                    max = self.l[n-1]
-                else:
-                    min = self.l[n-1]
-                    max = self.l[0]
+            # 1 compare between 1st and last element
+            counter += 1
+            if self.l1[0] < self.l1[n - 1]:
+                min = self.l1[0]
+                max = self.l1[n-1]
+            else:
+                min = self.l1[n-1]
+                max = self.l1[0]
 
-                mid = int((n-2)/2) + ((n-2) % 2 > 0)
-
-                for i in range (1,mid+1):
-                    # maximum 3 compares for any 2 elements
+            mid = int((n-2)/2) + ((n - 2) % 2 > 0)
+            for i in range(1, mid+1):
+                # maximum 3 compares for any 2 elements
+                counter += 1
+                if (self.l1[i] < self.l1[n - i - 1]):
                     counter += 1
-                    if (self.l[i] < self.l[n-i-1]):
-                        counter += 1
-                        if (self.l[i] < min):
-                            min = self.l[i]
-                        counter += 1
-                        if (self.l[n-i-1] > max):
-                            max = self.l[n-i-1]
-                    else:
-                        counter += 1
-                        if self.l[n-i-1] < min:
-                            min = self.l[n-i-1]
-                        counter += 1
-                        if self.l[i] > max:
-                            max = self.l[i]
-        l = [min, max, n, counter]
-        return(l)
-        # print("\noriginal list: " , str(L)[1:-1])
-        # print("min: " , min)
-        # print("max: " , max)
-        # print("Length of list: " , n)
-        # print("total comparisons: ", counter , "\n")
+                    if (self.l1[i] < min):
+                        min = self.l1[i]
+                    counter += 1
+                    if (self.l1[n-i-1] > max):
+                        max = self.l1[n - i - 1]
+                else:
+                    counter += 1
+                    if self.l1[n-i-1] < min:
+                        min = self.l1[n - i - 1]
+                    counter += 1
+                    if self.l1[i] > max:
+                        max = self.l1[i]
+        l1 = [min, max, n, counter]
+        return(l1)
 
 
 def main():
-
-        self.minmax([9, 3, 5, 10, 1, 7, 12])
-        #minmax([5,78,99,4,890,76543,8])
-        #minmax([9, 3, 5, 10, 1, 7])
-        #minmax([1, 3, 5, 8, 4, 10])
-        #minmax([10, 3, 5, 8, 7, 1])
-        #minmax([4, 3, 5, 1, 7, 10])
-        self.minmax([9, 3, 5, 10, 1, 7 , 5,78,99,4,890,76543,8,67,89,34,2,1,6,7,0,56,58])
-        self.minmax([])
-        self.minmax([3])
-        self.minmax([5,4])
-        self.minmax([5,4,3])
+    self.minmax([9, 3, 5, 10, 1, 7, 12])
+    self.minmax([9, 3, 5, 10, 1, 7, 5, 78, 99, 4,
+                 890, 76543, 8, 67, 89, 34, 2, 1,
+                 6, 7, 0, 56, 58])
+    self.minmax([])
+    self.minmax([3])
+    self.minmax([5, 4])
+    self.minmax([5, 4, 3])
 
 
 if __name__ == "__main__":
-        main()
+    main()
