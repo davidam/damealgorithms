@@ -24,9 +24,10 @@
 from unittest import TestCase
 from src.shellsort import Graph
 
+
 class TestShellsort(TestCase):
 
     def test_shellsort_create(self):
-        g = Graph([54,26,93,17,77,31,44,55,20])
+        g = Graph([54, 26, 93, 17, 77, 31, 44, 55, 20])
         g.shellSort()
         self.assertEqual(g.alist, [17, 20, 26, 31, 44, 54, 55, 77, 93])
