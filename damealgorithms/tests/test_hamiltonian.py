@@ -22,32 +22,33 @@
 # Boston, MA 02110-1301 USA,
 
 from unittest import TestCase
-from src.hamiltonian import Graph
+from src.hamiltonian import Hamiltonian
+
 
 class TestHamiltonian(TestCase):
 
     def test_hamiltonian_create(self):
-        ''' Let us create the following graph
-        (0)--(1)--(2)
-        |   / \   |
-        |  /   \  |
-        | /     \ |
-        (3)-------(4)    '''
-        g1 = Graph(5)
-        g1.graph = [ [0, 1, 0, 1, 0], [1, 0, 1, 1, 1],
-                     [0, 1, 0, 0, 1,],[1, 1, 0, 0, 1],
-                     [0, 1, 1, 1, 0], ]
+        # Let us create the following graph
+        # (0)--(1)--(2)
+        # |   / \   |
+        # |  /   \  |
+        # | /     \ |
+        # (3)-------(4)
+        g1 = Hamiltonian(5)
+        g1.graph = [[0, 1, 0, 1, 0], [1, 0, 1, 1, 1],
+                    [0, 1, 0, 0, 1], [1, 1, 0, 0, 1],
+                    [0, 1, 1, 1, 0]]
 
-        self.assertEqual([0, 1, 2, 4, 3,], g1.hamCycle())
-        ''' Let us create the following graph
-        (0)--(1)--(2)
-        |   / \   |
-        |  /   \  |
-        | /     \ |
-        (3)       (4)    '''
-        g2 = Graph(5)
-        g2.graph = [ [0, 1, 0, 1, 0], [1, 0, 1, 1, 1],
-                     [0, 1, 0, 0, 1,], [1, 1, 0, 0, 0],
-                     [0, 1, 1, 0, 0], ]
+        self.assertEqual([0, 1, 2, 4, 3], g1.hamCycle())
+        # Let us create the following graph
+        # (0)--(1)--(2)
+        # |   / \   |
+        # |  /   \  |
+        # | /     \ |
+        # (3)       (4)
+        g2 = Hamiltonian(5)
+        g2.graph = [[0, 1, 0, 1, 0], [1, 0, 1, 1, 1],
+                    [0, 1, 0, 0, 1], [1, 1, 0, 0, 0],
+                    [0, 1, 1, 0, 0], ]
 
         self.assertEqual(False, g2.hamCycle())
