@@ -30,7 +30,7 @@ with open(path.join(this_directory, 'README.md')) as f:
 
 
 setup(name='damealgorithms',
-      version='0.1',
+      version='0.1.1',
       description='A library to store simple algorithms',
       long_description=long_description,
       classifiers=[
@@ -50,6 +50,7 @@ setup(name='damealgorithms',
       package_dir={'damealgorithms': 'damealgorithms',
                    'damealgorithms.tests': 'damealgorithms/tests',
                    'damealgorithms.src': 'damealgorithms/src'},
+      data_files=[('damealgorithms', ['damealgorithms/runtests.sh'])],
       install_requires=[
           'markdown',
       ],
