@@ -17,7 +17,7 @@
 # GNU General Public License for more details.
 
 # You should have received a copy of the GNU General Public License
-# along with damealgorithms; see the file COPYING.  If not, write to
+# along with damealgorithms; see the file LICENSE.  If not, write to
 # the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 # Boston, MA 02110-1301 USA,
 import os
@@ -30,7 +30,7 @@ with open(path.join(this_directory, 'README.md')) as f:
 
 
 setup(name='damealgorithms',
-      version='0.0.11',
+      version='0.1',
       description='A library to store simple algorithms',
       long_description=long_description,
       classifiers=[
