@@ -23,6 +23,9 @@
 
 from unittest import TestCase
 from src.bfs import Graph
+# fix for MacOS using nose
+import collections
+collections.Callable = collections.abc.Callable
 
 
 class TestBfs(TestCase):
