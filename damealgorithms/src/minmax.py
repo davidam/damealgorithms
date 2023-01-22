@@ -77,15 +77,19 @@ class DameMinMax(object):
 
 
 def main():
-    self.minmax([9, 3, 5, 10, 1, 7, 12])
-    self.minmax([9, 3, 5, 10, 1, 7, 5, 78, 99, 4,
+    d = DameMinMax([9, 3, 5, 10, 1, 7, 12])
+    print(d.minmax())
+    d = DameMinMax([9, 3, 5, 10, 1, 7, 5, 78, 99, 4,
                  890, 76543, 8, 67, 89, 34, 2, 1,
                  6, 7, 0, 56, 58])
-    self.minmax([])
-    self.minmax([3])
-    self.minmax([5, 4])
-    self.minmax([5, 4, 3])
-
+    print(d.minmax())
+    d = DameMinMax([])
+    print(d.minmax())
+    d = DameMinMax([3])
+    print(d.minmax())
+    d = DameMinMax([5, 4])
+    print(d.minmax())
+    d = DameMinMax([5, 4, 3])
 
 if __name__ == "__main__":
     main()
