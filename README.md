@@ -1,24 +1,63 @@
 
 # Table of Contents
 
+1.  [Check Test](#orgf7e42f0)
+2.  [Pypi](#orge94fd50)
+    1.  [You can install from Internet in a python virtual environment to check:](#org01e63af)
+    2.  [To install from local:](#org6fb219a)
+    3.  [To install create tar.gz in dist directory:](#orga3f9d4d)
+    4.  [To upload to pypi:](#orgddd2aeb)
 
 
 <https://python-packaging.readthedocs.io/en/latest/minimal.html>
 
-To install from local: 
-$ pip install -e .
+<a id="orgf7e42f0"></a>
 
-To install create tar.gz in dist directory: 
-$ python3 setup.py register sdist
+# Check Test
 
-To upload to pypi: 
-$ twine upload dist/damealgorithms-0.0.1.tar.gz
+-   Execute all tests:
 
-To install from Internet: 
-$ pip3 install damealgorithms
+    $ pytest tests
 
-If you upload various tar.gz to pypi, you can need remove old files in dist directory and repeat the process:
-$ rm dist/\*tar.gz
-$ python3 setup.py register sdist
-$ twine upload dist/damealgorithms-0.0.1.tar.gz
+-   Execute one file:
+
+    $ pytest tests/test_basics.py
+
+-   Execute one test:
+
+    $ pytest tests/test_quicksort.py::TestBasics::test_quicksort_create
+
+<a id="orge94fd50"></a>
+
+# Pypi
+
+<a id="org01e63af"></a>
+
+## You can install from Internet in a python virtual environment to check:
+
+    $ mkdir /tmp/funny  
+    $ python3.14 -m venv /tmp/funny
+    $ cd /tmp/funny
+    $ source bin/activate
+    $ python3.14 -m pip install --upgrade pip  
+    $ python3.14 -m pip install damealgorithms
+
+<a id="org6fb219a"></a>
+
+## To install from local:
+
+    $ pip install -e .
+
+<a id="orga3f9d4d"></a>
+
+## To install create tar.gz in dist directory:
+
+    $ python3 -m build
+
+<a id="orgddd2aeb"></a>
+
+## To upload to pypi:
+
+    $ twine upload dist/damealgorithms-0.1.tar.gz
+
 
